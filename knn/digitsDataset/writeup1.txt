@@ -1,0 +1,16 @@
+(a)
+k = 1, error rate = 0.089
+k = 2, error rate = 0.089
+k = 5, error rate = 0.094
+k = 10, error rate = 0.111
+k = 25, error rate = 0.128
+The best value of k is 1 or 2.
+
+(b)
+The tie-breaking rule I use is: for every validation/test feature, order the feature points in train set from closest to farthest. Then if there are some labels with same number of votes, compute the sum of the order numbers of those voting points and pick the label with least sum. If some labels have same number of votes and same sum, I may pick any of them.
+
+(c)
+No. From my tie-breaking rules, if the two closest points vote the same label, the result is the same with when k = 1. If two closest points vote different labels, the result is the label with the closest point, so it is still the result when k = 1. Thus, in fact, k = 1 or 2 are the same case.
+
+(d)
+valDigit4.png, valDigit15.png, valDigit63.png. These examples are a bit unclear in color or font. It may help if we can use a larger block (say, 2x2 or 3x3 pixel block) or use the average value of every pixel and its neighbor pixels for every feature to better identify the digits.
